@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,8 +30,107 @@ public class Challenges
     */
     public int AddTillNumber(int number)
     {
+        int n = number;
+        //int sum = 0;
 
-        return 0;
+        //if (number < 0)
+        //{
+        //    for (int i = -1; i >= n; i--)
+        //    {
+        //        sum += i;
+        //    }
+        //}
+        //else
+        //{
+        //    for (int i = 1; i <= n; i++)
+        //    {
+        //        sum += i;
+        //    }
+        //}
+
+        //Sum of natural numbers using while loop
+        //int j = 0;
+        //int sum = 0;
+        //if (number < 0)
+        //{
+        //    j = -1;
+        //    while (j >= n)
+        //    {
+        //        sum += j;
+        //        j--;
+        //    }
+        //}
+        //else
+        //{
+        //    while (j < n)
+        //    {
+        //        j++;
+        //        sum += j;
+
+        //    }
+        //}
+
+        // Sum of natural numbers using do while loop
+        //if (number == 0)
+        //{
+        //    return 0;
+        //}
+        //int k = 0;
+        //int sum = 0;
+        //if (number < 0)
+        //{
+        //    do
+        //    {
+        //        k--;
+
+        //        sum += k;
+
+        //    } while (k > number);
+
+
+        //}
+
+        //else
+        //{
+        //    do
+        //    {
+        //        k++;
+        //        sum += k;
+
+        //    } while (k < n);
+        //}
+
+        //Sum of natural numbers using foreach loop
+        int[] a = new int[Math.Abs(n)];
+
+
+        for (int i = 0; i < a.Length; i++)
+        {
+            a[i] = number > 0 ? i + 1 : n + i;
+        }
+
+        int sum = 0;
+        foreach (int l in a)
+        {
+            sum += l;
+        }
+        //Sum of natural numbers using recursion
+
+        // int sum = Sum(n);
+        return sum;
+    }
+
+    public static int Sum(int n)
+    {
+        if (n == 0)
+        {
+            return 0;
+        }
+        else if (n > 0) { return n + Sum(n - 1); }
+        else
+        {
+            return n + Sum(n + 1);
+        }
     }
 
     /*Challenge 2:
